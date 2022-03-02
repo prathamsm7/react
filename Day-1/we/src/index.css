@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  color: red;
+}
+
+#top {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+img {
+  width: 100px;
+  height: 80px;
+}
+
+#root {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  gap: 10px;
+}
+
+#left {
+  /* border: 1px solid red; */
+  width: 50%;
+}
+
+#right {
+  /* border: 1px solid blue; */
+  width: 50%;
+}
