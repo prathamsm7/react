@@ -6,3 +6,19 @@ li {
   color: aqua;
   font-weight: bold;
 }
+
+#os li {
+  list-style: disc;
+}
+
+#mm li {
+  list-style: square;
+}
+
+#mm li:nth-of-type(3) {
+  list-style: disc;
+}
+
+#mm li:nth-of-type(4) {
+  list-style: circle;
+}
