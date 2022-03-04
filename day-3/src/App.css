@@ -1,0 +1,14 @@
+body {
+  background-color: aquamarine;
+  text-align: center;
+  color: red;
+}
+
+button {
+  margin: 2%;
+  padding: 1%;
+  background-color: rgb(54, 89, 90);
+  color: rgb(251, 255, 0);
+  font-weight: bold;
+  border: none;
+}
