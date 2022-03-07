@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.App > div {
+  width: 50%;
+  border: 2px solid red;
+  padding: 5px;
+  margin: auto;
+}
+
+#todo {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
