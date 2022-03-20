@@ -1,12 +1,12 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const ProductsPage = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/products").then((res) => {
+    axios.get('http://localhost:3001/products').then((res) => {
       setData(res.data);
       console.log(res);
     });
@@ -15,12 +15,12 @@ export const ProductsPage = () => {
     <>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 35%)",
-          justifyContent: "space-evenly",
-          width: "500px",
-          margin: "auto",
-          paddingTop: "50px",
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 35%)',
+          justifyContent: 'space-evenly',
+          width: '500px',
+          margin: 'auto',
+          paddingTop: '50px',
         }}
       >
         <h4>Product Name</h4>
@@ -31,18 +31,18 @@ export const ProductsPage = () => {
         return (
           <div
             key={el.id}
-            className="container"
+            className='container'
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 35%)",
-              justifyContent: "space-evenly",
-              width: "500px",
-              margin: "auto",
-              paddingTop: "10px",
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 35%)',
+              justifyContent: 'space-evenly',
+              width: '500px',
+              margin: 'auto',
+              paddingTop: '10px',
             }}
           >
-            <div className="name">{el.name}</div>
-            <div className="price">{el.price}</div>
+            <div className='name'>{el.name}</div>
+            <div className='price'>{el.price}</div>
             <Link to={`/products/${el.id}`}>more details</Link>
           </div>
         );
