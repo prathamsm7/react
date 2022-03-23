@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addTodo, updateTodo } from '../Redux/Todos/action';
 
 const Todo = () => {
@@ -9,6 +10,8 @@ const Todo = () => {
 
   const todos = useSelector((store) => store.todo);
   const dispatch = useDispatch();
+
+  let route = useNavigate();
 
   useEffect(() => {
     getTodo();
@@ -38,6 +41,10 @@ const Todo = () => {
       });
   };
 
+  const redirect = (id) => {
+    route(`/todo/${id}`);
+  };
+
   return (
     <div>
       <input type='text' onChange={(e) => setText(e.target.value)} />
@@ -51,7 +58,12 @@ const Todo = () => {
 
       {todos.map((e, i) => {
         return (
-          <div key={i}>
+          <div
+            key={i}
+            onClick={() => {
+              redirect(e.id);
+            }}
+          >
             <span
               style={{ color: 'red', marginRight: '15px', fontWeight: 'bold' }}
             >
