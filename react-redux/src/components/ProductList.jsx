@@ -2,21 +2,21 @@ import { Box, Grid, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setProducts } from '../redux/actions/productActions';
+import { setProducts, fetchProducts } from '../redux/actions/productActions';
 import Products from './Products';
 
 const ProductList = () => {
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
-  const fetchProducts = async () => {
-    await axios.get(`https://fakestoreapi.com/products`).then((res) => {
-      dispatch(setProducts(res.data));
-    });
-  };
+  // const fetchProducts = async () => {
+  //   await axios.get(`https://fakestoreapi.com/products`).then((res) => {
+  //     dispatch(setProducts(res.data));
+  //   });
+  // };
 
   useEffect(() => {
-    fetchProducts();
+    dispatch(fetchProducts());
   }, []);
 
   return (

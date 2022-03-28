@@ -4,8 +4,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
+  fetchProduct,
   removeSelectedProducts,
-  selectedProducts,
 } from '../redux/actions/productActions';
 
 const ProductDetails = () => {
@@ -14,15 +14,15 @@ const ProductDetails = () => {
   const { image, title, description, price, category } = product;
   const dispatch = useDispatch();
 
-  const fetchProducts = async (id) => {
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-      dispatch(selectedProducts(res.data));
-    });
-  };
+  // const fetchProducts = async (id) => {
+  //   axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
+  //     dispatch(selectedProducts(res.data));
+  //   });
+  // };
 
   useEffect(() => {
     if (id && id !== '') {
-      fetchProducts(id);
+      dispatch(fetchProduct(id));
     }
     return () => {
       dispatch(removeSelectedProducts());

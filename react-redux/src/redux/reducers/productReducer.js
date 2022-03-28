@@ -2,6 +2,7 @@ import {
   SELECTED_PRODUCTS,
   SET_PRODUCTS,
   REMOVE_SELECTED_PRODUCTS,
+  FETCH_PRODUCTS,
 } from '../actions/productActions';
 
 const initState = {
@@ -11,6 +12,8 @@ const initState = {
 export const productsReducer = (state = initState, { type, payload }) => {
   switch (type) {
     case SET_PRODUCTS:
+      return { ...state, products: payload };
+    case FETCH_PRODUCTS:
       return { ...state, products: payload };
     default:
       return state;
